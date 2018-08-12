@@ -6,11 +6,201 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
- 
-
     <title>Friend Finder</title>
 </head>
 <body>
+    <div class="container">
+        <div class="card-panel center-align">
+            <h1 class="display-4">Friends Survey</h1>
+        </div>
+        <div class="card-panel left-align">
+            <h2><strong>About You</strong></h2>
+            <input id="name" type="text" class="validate" required>
+            <label class="active" for="name">Name (required)</label>
+            <input id="photo" type="text" class="validate" required>
+            <label class="active" for="photo">Photo link (required></label>
+            <br>
+            <h3><strong>Question One</strong></h3>
+            <p>I consider myself a creative person.</p>
+            <select data-placeholder="Choose an option" class="browser-default" id="q1">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <h3><strong>Question Two</strong></h3>
+            <p>I like to think outside the box.</p>
+            <select data-placeholder="Choose an option" class="browser-default" id="q2">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <h3><strong>Question Three</strong></h3>
+            <p>I consider myself to be a people person.</p>
+            <select data-placeholder="Choose an option" class="browser-default" id="q3">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+                </select>
+            <h3><strong>Question Four</strong></h3>
+            <p>I am adept at handling whatever struggles live throws my way.</p>
+            <select data-placeholder="Choose an option" class="browser-default" id="q4">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <h3><strong>Question Five</strong></h3>
+            <p>I enjoy my time to myself.</p>
+            <select data-placeholder="Choose an option" class="browser-default" id="q5">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <h3><strong>Question Six</strong></h3>
+            <p>I tend to put the needs of my friends before my own.</p>
+            <select data-placeholder="Choose an option" class="browser-default" id="q6">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <h3><strong>Question Seven</strong></h3>
+            <p>I consider myself to be a pragmatist.</p>
+            <select data-placeholder="Choose an option" class="browser-default" id="q7">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <h3><strong>Question Eight</strong></h3>
+            <p>I enjoy solving problems.</p>
+            <select data-placeholder="Choose an option" class="browser-default" id="q8">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <h3><strong>Question Nine</strong></h3>
+            <p>I am a mostly disorganized person.</p>
+            <select data-placeholder="Choose an option" class="browser-default" id="q9">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <h3><strong>Question Ten</strong></h3>
+            <p>I am more of a calm and stable person.</p>
+            <select data-placeholder="Choose an option" class="browser-default" id="q10">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <button type="submit" data-target="modal1" id="submitbtn" class="btn btn-primary btn-lg">Submit</button>
+
+        </div>
+    </div>
     
+
+    <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Your New Friend!</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h5 id="friend-name"></h5>
+                  <img id="friend-img" src="" alt="No Image">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $("#submitbtn").on("click", function() {
+        function validateForm() {
+            var isValid = true;
+            $('.validate').each(function() {
+                if ($(this).val() === ''){
+                    isValid = false;
+                }
+            });
+            $('.browser-default').each(function() {
+                if ($(this).val() === ""){
+                    isValid = false;
+                }
+            });
+            return isValid;
+        }
+        
+        if (validateForm() == true) {
+            var newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                Scores: [
+                    $("#q1").val().trim(),
+                    $("#q2").val().trim(),
+                    $("#q3").val().trim(),
+                    $("#q4").val().trim(),
+                    $("#q5").val().trim(),
+                    $("#q6").val().trim(),
+                    $("#q7").val().trim(),
+                    $("#q8").val().trim(),
+                    $("#q9").val().trim(),
+                    $("#q10").val().trim()
+                ]
+            }
+        var currentURL = window.location.origin;
+
+        $.post(currentURL + "/api/friends", newFriend, function(data) {
+            $("#friend-name").text(data.name);
+            $("#friend-img").attr("src", data.photo);
+        });
+        $(".modal").modal();
+
+         $('#name').val("");
+            $('#photo').val("");
+            $('#q1').val("");
+            $('#q2').val("");
+            $('#q3').val("");
+            $('#q4').val("");
+            $('#q5').val("");
+            $('#q6').val("");
+            $('#q7').val("");
+            $('#q8').val("");
+            $('#q9').val("");
+            $('#q10').val("");
+    }
+    else{
+        alert("Please fill in all information!")
+    }
+        });
+});
+
+
+
+</script>
 </body>
 </html>
